@@ -1,0 +1,69 @@
+body {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    /* gap: 50px; */
+    align-items: center;
+    overflow-x: hidden;
+}
+
+#container {
+    height: 650px;
+    width: 650px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 50px;
+}
+
+.color {
+    height: 300px;
+    width: 300px;
+    opacity: 0.7;
+}
+
+#red {
+    background-color: red;
+}
+
+#blue {
+    background-color: blue;
+}
+
+#yellow {
+    background-color: yellow;
+}
+
+#green {
+    background-color: green;
+}
+
+.secBlue {
+    opacity: 1;
+    -webkit-box-shadow: 0px 0px 105px 45px blue;
+    -moz-box-shadow: 0px 0px 105px 45px blue;
+    box-shadow: 0px 0px 105px 45px blue;
+}
+
+.secYellow {
+    opacity: 1;
+    -webkit-box-shadow: 0px 0px 105px 45px yellow;
+    -moz-box-shadow: 0px 0px 105px 45px yellow;
+    box-shadow: 0px 0px 105px 45px yellow;
+}
+
+.secRed {
+    opacity: 1;
+    -webkit-box-shadow: 0px 0px 105px 45px red;
+    -moz-box-shadow: 0px 0px 105px 45px red;
+    box-shadow: 0px 0px 105px 45px red;
+}
+
+.secGreen {
+    opacity: 1;
+    -webkit-box-shadow: 0px 0px 105px 45px green;
+    -moz-box-shadow: 0px 0px 105px 45px green;
+    box-shadow: 0px 0px 105px 45px green;
+}
