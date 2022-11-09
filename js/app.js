@@ -5,18 +5,38 @@ const blue = document.getElementById("blue")
 
 const allEl = [red, green, yellow, blue]
 
+for (let i = 0; i < allEl.length; i++) {
+    allEl[i].addEventListener('click', (e) => {
+        if (sequanced) return
+
+        played.push(e.target.id)
+        console.log(played, sequance, played.length === sequance.length);
+
+        const verified = verif()
+
+        if (played.length === sequance.length && verified) {
+            if (verif()) {
+                seq()
+            }
+        }
+
+    })
+}
+
 let sequance = []
-const played = []
+let played = []
+let sequanced = false
 const color = ["red", "green", "blue", "yellow"]
 
 function seq() {
+    played = []
+    sequanced = true
     const random = Math.floor(Math.random() * color.length)
     sequance.push(color[random])
 
     for (let i = 0; i < sequance.length; i++) {
 
         setTimeout(() => {
-            console.log(sequance);
             switch (sequance[i]) {
                 case "red":
                     red.classList.add("secRed")
@@ -47,47 +67,26 @@ function seq() {
         }, (i + 1) * 2000);
 
         setTimeout(() => {
-            play()
-        }, (i + 1) * (1000 * (sequance.length + 1)));
-
+            sequanced = false
+        }, 2000 * (sequance.length + 1));
     }
 
 }
 
 function verif() {
 
-    for (let i = 0; i < allEl.length; i++) {
+    for (let i = 0; i < played.length; i++) {
 
         if (played[i] !== sequance[i]) {
             alert('Pas bon !')
             sequance = []
-            seq()
+            played = []
             return false
         }
-        else {
-            return true
-        }
-
-    }
-}
-
-function play() {
-
-    for (let i = 0; i < allEl.length; i++) {
-
-        allEl[i].addEventListener("click", () => {
-
-            played.push(allEl[i].id)
-
-            if (verif()) {
-                console.log("Bon");
-                seq()
-            }
-
-        })
-
     }
 
+    return true
 }
+
 
 seq()
